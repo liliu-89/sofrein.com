@@ -1,201 +1,495 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SofRein – Data-driven Marketing Agentur (DE)</title>
   <meta name="description" content="SofRein ist eine Marketing-Agentur für Unternehmen, die mit Daten arbeiten wollen, nicht mit Bauchgefühl. Messbare Ergebnisse, nachhaltiges Wachstum, Klarheit im Marketing.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Farb-Variablen (optional so lassen) -->
+  <style>
+    :root{
+      --primary:#00A6A6; --ink:#0A2239; --text:#333333; --bg:#ffffff;
+      --muted:#F7F9FB; --border:#E6EDF3;
+    }
+    html,body{margin:0}
+  </style>
+
+  <!-- Tailwind via CDN -->
+  <script>
+    tailwind.config = { theme:{ extend:{} } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
+
 </head>
-<body>
-  <header>
-    <!-- Navigation -->
-    <nav class="container nav">
-      <div class="brand"><span class="brand-dot"></span> SofRein</div>
-      <nav aria-label="Hauptnavigation">
-        <ul>
-          <li><a href="#start">Startseite</a></li>
-          <li><a href="#kunden">Kunden & Projekte</a></li>
-          <li><a href="#modelle">Modelle</a></li>
-          <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#kontakt" class="btn">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="lang" aria-label="Sprachauswahl">
-        <a href="sofrein_bg.html" hreflang="bg">BG</a>
-        <span>·</span>
-        <a href="sofrein_de.html" aria-current="page" hreflang="de"><strong>DE</strong></a>
+<body class="bg-[var(--bg)] text-[var(--text)] font-[system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji'] text-[16px]/[1.6]">
+
+<!-- Navbar -->
+<nav class="sticky top-0 z-10 bg-white/90 backdrop-saturate-150 backdrop-blur-sm border-b border-[var(--border)]" aria-label="Hauptnavigation">
+  <div class="max-w-[1120px] mx-auto px-5">
+    <!-- Grid statt justify-between -->
+    <div class="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3 min-h-[56px]">
+      
+      <!-- Brand (links) -->
+      <a href="#start" class="inline-flex items-center gap-2 font-bold text-[var(--ink)] text-xl">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--primary)]"></span>
+        SofRein
+      </a>
+
+      <!-- Primäre Links (zentriert) -->
+      <ul class="justify-self-center hidden md:flex items-center gap-6 m-0 p-0 list-none">
+        <li><a class="inline-flex items-center h-10 font-semibold text-[var(--ink)] hover:underline" href="#kunden">Kunden & Projekte</a></li>
+        <li><a class="inline-flex items-center h-10 font-semibold text-[var(--ink)] hover:underline" href="#modelle">Modelle</a></li>
+        <li><a class="inline-flex items-center h-10 font-semibold text-[var(--ink)] hover:underline" href="#ueber-uns">Über uns</a></li>
+        <li>
+          <a href="#kontakt"
+             class="inline-flex items-center justify-center h-10 px-4 bg-[var(--primary)] text-white rounded-xl font-bold transition hover:opacity-90 motion-safe:hover:-translate-y-0.5">
+            Kontakt
+          </a>
+        </li>
+      </ul>
+
+      <!-- Language switch (rechts) -->
+      <div class="justify-self-end flex items-center gap-2">
+        <a href="#" hreflang="bg" class="opacity-70 hover:opacity-100 inline-flex">
+          <img class="h-[14px] align-middle rounded border border-gray-500/70" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Bulgaria.svg/960px-Flag_of_Bulgaria.svg.png" alt="BG">
+        </a>
+        <span class="text-gray-400">|</span>
+        <a href="#" aria-current="page" hreflang="de" class="opacity-100 font-extrabold inline-flex">
+          <img class="h-[14px] align-middle rounded border border-gray-500/70" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag_of_germany_800_480.png" alt="DE">
+        </a>
       </div>
-    </nav>
-  </header>
+
+    </div>
+  </div>
+</nav>
 
   <main>
     <!-- Hero -->
-    <section id="start" class="hero">
-      <div class="container">
-        <h1>SofRein – Datengetriebene Performance-Marketing-Agentur für Unternehmen, die nicht mit nach Bauchgefühl arbeiten wollen.</h1>
-        <p class="lead">Wir bündeln Expertise aus Google Ads, Tracking, SEO und Design in einem Netzwerk aus Top-Freelancern. Fokus: messbare Ergebnisse, nachhaltiges Wachstum und Klarheit im Marketing.</p>
-        <div class="hero-cta">
-          <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
-          <a class="btn btn-outline" href="#kunden">Referenzen ansehen</a>
+    <section id="start" class="bg-[linear-gradient(95deg,var(--muted),#fff)] py-18 md:py-20">
+      <div class="max-w-[1120px] mx-auto px-5">
+        <h1 class="m-0 mb-1 text-[var(--ink)] text-[40px] leading-[1.15]">SofRein – Datengetriebene Performance-Marketing-Agentur</h1>
+        <h2 class="m-0 mb-3 text-[var(--ink)] text-[32px] leading-[1.15]">für Unternehmen, die nicht nach Bauchgefühl arbeiten wollen.</h2>
+        <p class="text-[18px] max-w-[760px] mb-3 text-[#54616d]">Wir verbinden Paid Ads, Conversion-Tracking, SEO und Design zu einem datenbasierten Marketing, das Ihren Vertrieb stärkt und für nachhaltiges Wachstum sorgt.</p>
+        <p class="text-[18px] max-w-[760px] mb-6 text-[#54616d]">Unser Fokus: messbare Ergebnisse, nachhaltiges Wachstum und volle Klarheit im Marketing.</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="inline-block bg-[var(--primary)] text-white rounded-xl px-4 py-3 font-bold transition hover:opacity-90 hover:-translate-y-0.5" href="#kontakt">Kontakt aufnehmen</a>
+          <a class="inline-block bg-white text-[var(--ink)] border border-[var(--border)] rounded-xl px-4 py-3 font-bold transition hover:-translate-y-0.5" href="#kunden">Referenzen ansehen</a>
         </div>
       </div>
     </section>
 
-    <!-- Logo strip -->
-    <div class="strip" aria-label="Kundenlogos">
-      <div class="container">
-        <div class="grid">
-          <div class="logo" aria-label="Calcuso GmbH Logo (Platzhalter)"><Calcuso></div>
-          <div class="logo" aria-label="droxic OOD Logo (Platzhalter)">droxic</div>
-          <div class="logo" aria-label="JÜNGER GmbH Logo (Platzhalter)"><img src="https://2023.juenger.com/wp-content/uploads/2023/02/Juenger-Logo-Kontur-blau.png" alt="Jünger GmbH Logo"></div>
-          <div class="logo" aria-label="Growth Pilots GmbH Logo (Platzhalter)">Growth Pilots</div>
-          <div class="logo" aria-label="ERASON GmbH Logo (Platzhalter)">ERASON</div>
-          <div class="logo" aria-label="Frontend Studios GmbH Logo (Platzhalter)">Frontend Studios</div>
-          <div class="logo" aria-label="Zahnarztpraxis im Medienhafen Logo (Platzhalter)">Medienhafen</div>
-          <div class="logo" aria-label="Leben braucht Bewegung GmbH Logo (Platzhalter)">LBB</div>
+    <!-- Logo-Strip (Marquee) -->
+<section class="py-6 border-y border-[var(--border)] bg-white" aria-label="Kundenlogos">
+  <div class="overflow-hidden relative">
+    <!-- Track enthält 2 identische Blöcke für den Loop -->
+    <div class="marquee-track flex flex-nowrap gap-6">
+
+      <!-- Block 1: deine Original-Optik (Box + Grayscale + Hover) -->
+      <div class="flex flex-nowrap gap-6 pr-6">
+        <!-- AIlon -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://ailon.io/hubfs/PR%20%289%29.png" alt="ERASON/AIlon" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Bema -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://www.bema-verpackungen.de/wp-content/uploads/2023/12/bema-verpackungen-logo.svg" alt="bema-verpackungen" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Calcuso -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://ai.calcuso.com/static/media/logo.2086744a.svg" alt="Calcuso" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- droxic -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://devstyler.io/wp-content/uploads/sites/3/2022/04/Droxic_b-logo-1280x690v2.jpg" alt="droxic" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Frontend Studios (so wie du es gelassen hast) -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 transition hover:opacity-100 hover:-translate-y-0.5">
+          <img src="https://cdn02.plentymarkets.com/kx6ybut71dar/frontend/ceres/fes_logo_white.svg" alt="Frontend Studios Logo" class="max-h-10 max-w-[80%] filter invert brightness-10" loading="lazy" decoding="async">
+        </div>
+        <!-- growth pilots -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://www.growth-pilots.de/wp-content/uploads/growth-pilots-logo-full-color-rgb.svg" alt="Growth Pilots" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Jünger -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://2023.juenger.com/wp-content/uploads/2023/02/Juenger-Logo-Kontur-blau.png" alt="Jünger GmbH Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Leben braucht Bewegung -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://res.cloudinary.com/lebenbrauchtbewegung/image/upload/v1587546307/logo.png" alt="Leben braucht Bewegung Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Notable Nannies -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://notablenannies.com/wp-content/uploads/2024/03/LOGO-notable-nannies.png" alt="Notable Nannies Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Protagene -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://careers.recruiteecdn.com/image/upload/q_auto,f_auto,w_1920,c_limit/production/images/Aa19/9Hs7Nq4Qe25w.png" alt="Protagene" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <!-- Zahnarzt im Medienhafen -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://www.zahnarzt-medienhafen.de/wp-content/uploads/2020/02/logo-280x89.png" alt="Zahnarzt im Medienhafen Logo" loading="lazy" decoding="async" width="180" height="56">
         </div>
       </div>
+
+      <!-- Block 2: identisches Duplikat (für den Loop) -->
+      <div class="flex flex-nowrap gap-6 pr-6" aria-hidden="true">
+        <!-- dieselben 11 Logo-Slots 1:1 einfügen wie oben -->
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://ailon.io/hubfs/PR%20%289%29.png" alt="ERASON/AIlon" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://www.bema-verpackungen.de/wp-content/uploads/2023/12/bema-verpackungen-logo.svg" alt="bema-verpackungen" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://ai.calcuso.com/static/media/logo.2086744a.svg" alt="Calcuso" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://devstyler.io/wp-content/uploads/sites/3/2022/04/Droxic_b-logo-1280x690v2.jpg" alt="droxic" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 transition hover:opacity-100 hover:-translate-y-0.5">
+          <img src="https://cdn02.plentymarkets.com/kx6ybut71dar/frontend/ceres/fes_logo_white.svg" alt="Frontend Studios Logo" class="max-h-10 max-w-[80%] filter invert brightness-10" loading="lazy" decoding="async">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://www.growth-pilots.de/wp-content/uploads/growth-pilots-logo-full-color-rgb.svg" alt="Growth Pilots" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://2023.juenger.com/wp-content/uploads/2023/02/Juenger-Logo-Kontur-blau.png" alt="Jünger GmbH Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://res.cloudinary.com/lebenbrauchtbewegung/image/upload/v1587546307/logo.png" alt="Leben braucht Bewegung Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://notablenannies.com/wp-content/uploads/2024/03/LOGO-notable-nannies.png" alt="Notable Nannies Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://careers.recruiteecdn.com/image/upload/q_auto,f_auto,w_1920,c_limit/production/images/Aa19/9Hs7Nq4Qe25w.png" alt="Protagene" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+        <div class="logo-slot flex items-center justify-center rounded-xl bg-white opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 hover:-translate-y-0.5">
+          <img class="object-contain" src="https://www.zahnarzt-medienhafen.de/wp-content/uploads/2020/02/logo-280x89.png" alt="Zahnarzt im Medienhafen Logo" loading="lazy" decoding="async" width="180" height="56">
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <!-- Kunden & Projekte -->
-    <section id="kunden">
-      <div class="container">
-        <h2>Kunden & Projekte</h2>
-        <p class="lead">Wir arbeiten als strategischer Berater mit Fokus auf B2B-Unternehmen, E-Commerce & technische Branchen und betreuen Unternehmen bei der digitalen Leadgenerierung mit messbaren Ergebnissen.</p>
+<!-- Kunden & Projekte -->
+<section id="kunden" class="py-18 md:py-20">
+  <div class="max-w-[1120px] mx-auto px-5">
+    <h2 class="text-[32px] text-[var(--ink)] mb-4">Kunden & Projekte</h2>
+    <p class="text-[#54616d] mb-6">
+      Wir arbeiten als strategischer Berater mit Fokus auf B2B-Unternehmen, E-Commerce & technische Branchen und betreuen Unternehmen bei der digitalen Leadgenerierung mit messbaren Ergebnissen.
+    </p>
 
-        <div class="cards">
-          <article class="card">
-            <h3>Calcuso GmbH</h3>
-            <div class="meta">Online-Shop für Schul- und Lernmaterialien</div>
-            <p>Für Calcuso haben wir Google-Ads-Kampagnen optimiert und internationale Strategien entwickelt.</p>
-          </article>
-
-          <article class="card">
-            <h3>droxic OOD</h3>
-            <div class="meta">Digitalagentur für Technologie und Marketing</div>
-            <p>Wir haben droxic im Performance-Marketing und beim Tracking-Setup unterstützt.</p>
-            <span class="tag" aria-label="Abgeschlossenes Projekt">Abgeschlossenes Projekt</span>
-          </article>
-
-          <article class="card">
-            <h3>JÜNGER GmbH</h3>
-            <div class="meta">Hersteller von Spezialgeräten für Industrie und Handwerk</div>
-            <p>Wir haben Suchmaschinenmarketing eingesetzt, um B2B-Leads zu generieren.</p>
-          </article>
-
-          <article class="card">
-            <h3>Growth Pilots GmbH</h3>
-            <div class="meta">Beratungsagentur für digitales Wachstum im B2B-Bereich</div>
-            <p>Gemeinsam haben wir Projekte für ihre Kunden mit datengetriebenem Marketing unterstützt.</p>
-          </article>
-
-          <article class="card">
-            <h3>ERASON GmbH</h3>
-            <div class="meta">KI-gestützte Tools für Markt- und Konsumanalysen</div>
-            <p>Wir haben ERASON bei der Kampagnenstrategie und Conversion-Optimierung beraten.</p>
-            <span class="tag" aria-label="Abgeschlossenes Projekt">Abgeschlossenes Projekt</span>
-          </article>
-
-          <article class="card">
-            <h3>Frontend Studios GmbH</h3>
-            <div class="meta">Agentur für digitale Lösungen, Webentwicklung und Design</div>
-            <p>Für Kunden von Frontend Studios haben wir Tracking-Implementierungen und Marketing-Schnittstellen eingerichtet.</p>
-          </article>
-
-          <article class="card">
-            <h3>Zahnarztpraxis im Medienhafen</h3>
-            <div class="meta">Zahnmedizinische Praxis in Düsseldorf</div>
-            <p>Mit Google Ads haben wir die lokale Sichtbarkeit und Reichweite gegenüber Mitbewerbern erhöht.</p>
-          </article>
-
-          <article class="card">
-            <h3>Leben braucht Bewegung GmbH</h3>
-            <div class="meta">Coaching-Programme und Retreats</div>
-            <p>Wir haben Online-Marketing-Kampagnen für Retreats und Coaching-Angebote umgesetzt.</p>
-          </article>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <!-- Card -->
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://ai.calcuso.com/static/media/logo.2086744a.svg" alt="Calcuso" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
         </div>
-      </div>
-    </section>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">Calcuso GmbH</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Online-Shop für Schul- und Lernmaterialien</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Google Ads Struktur neu aufgesetzt (P-Max + Produktkampagnen)</li>
+            <li>Intl. Skalierung & Feed-Optimierung (Channable)</li>
+            <li>ROAS-Steigerung bei gleichbleibendem Budget</li>
+          </ul>
+          <!--a href="#" class="inline-flex items-center gap-2 mt-4 text-[var(--ink)] font-semibold hover:underline">
+            Case Study ansehen
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a-->
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://blog.droxic.com/wp-content/uploads/2022/06/droxic.svg" alt="droxic" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">droxic OOD</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Digitalagentur für Technologie und Marketing</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Performance-Marketing Setup & Tracking</li>
+            <li>Consent-konformes Tagging (GTM/GA4)</li>
+            <li>Landing Page & CRO</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://2023.juenger.com/wp-content/uploads/2023/02/Juenger-Logo-Kontur-blau.png" alt="JÜNGER" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
+          <span class="gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEO</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">JÜNGER GmbH</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Spezialgeräte für Industrie & Handwerk</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Performance-Marketing Setup & Tracking</li>
+            <li>B2B Leadgen via Google Suchnetzwerk</li>
+            <li>Keyword-Clustering & Anzeigenerweiterungen</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://www.growth-pilots.de/wp-content/uploads/growth-pilots-logo-full-color-rgb.svg" alt="Growth Pilots" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
+          <span class="gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">Workshop</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">Growth Pilots GmbH</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Beratung für digitales B2B-Wachstum</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Operative Unterstützung für Kundenprojekte</li>
+            <li>Data-Driven Kampagnenplanung</li>
+            <li>Reporting-Frameworks</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://ailon.io/hs-fs/hubfs/AIlon%20Favicon-2.png?width=1000&height=1000&name=AIlon%20Favicon-2.png" alt="ERASON/AIlon" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
+          <span class="gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">Paid Social</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">ERASON GmbH / AIlon</h3>
+          <div class="text-gray-500 text-[14px] mb-3">KI-gestützte Markt- & Konsumanalysen</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Kampagnenstrategie & CRO</li>
+            <li>Funnel- & Landing Page Audits</li>
+            <li>Google- & LinkedIn-Werbekampagnen</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://cdn02.plentymarkets.com/kx6ybut71dar/frontend/ceres/fes_logo_white.svg" alt="Frontend Studios" class="h-8 w-auto object-contain filter invert brightness-[0.2] contrast-[1.2]" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">Web Analytics</span>
+          <span class="gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">Tracking & Tag Management</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">Frontend Studios GmbH</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Webentwicklung & Design</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Operative Unterstützung für Kundenprojekte</li>
+            <li>Tracking-Implementierungen (GTM/GA4)</li>
+            <li>A/B-Testing-Vorbereitung</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://www.zahnarzt-medienhafen.de/wp-content/uploads/2020/02/logo-280x89.png" alt="Zahnarzt im Medienhafen" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
+          <span class="gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">Tracking & Tag Management</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">Zahnarztpraxis im Medienhafen</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Zahnarztpraxis in Düsseldorf</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Lokale Sichtbarkeit via Google Ads</li>
+            <li>Wettbewerbsanalyse & Positionierung</li>
+            <li>Call-Tracking & Conversion-Setup</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group border border-[var(--border)] rounded-2xl bg-white overflow-hidden transition hover:shadow-xl motion-safe:hover:-translate-y-0.5">
+        <div class="flex items-center gap-3 px-5 pt-5">
+          <img src="https://res.cloudinary.com/lebenbrauchtbewegung/image/upload/v1587546307/logo.png" alt="Leben braucht Bewegung" class="h-8 w-auto object-contain" loading="lazy" decoding="async">
+          <span class="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">SEA</span>
+          <span class="gap-2 text-xs font-semibold text-[#0b5f5f] bg-[#eef6f6] border border-[#d6efef] px-2 py-0.5 rounded-full">Web Analytics</span>
+        </div>
+        <div class="px-5 pb-5">
+          <h3 class="m-0 mt-3 mb-1 text-[20px] text-[var(--ink)]">Leben braucht Bewegung GmbH</h3>
+          <div class="text-gray-500 text-[14px] mb-3">Coaching-Programme & Retreats</div>
+          <ul class="list-disc pl-5 text-[15px] space-y-1">
+            <li>Lead-Funnel mit Erstgespräch-CTA</li>
+            <li>Consent-konformes Tracking via Matomo</li>
+            <li>Landing Page & CRO</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <!-- Modelle -->
-    <section id="modelle" style="background:var(--muted)">
-      <div class="container">
-        <h2>Modelle</h2>
-        <p class="lead">Wir arbeiten sowohl direkt mit Kunden, als auch projektbasiert im Auftrag anderer Agenturen.</p>
+    <section id="modelle" class="bg-[var(--muted)] py-18 md:py-20">
+      <div class="max-w-[1120px] mx-auto px-5">
+        <h2 class="text-[32px] text-[var(--ink)] mb-4">Modelle</h2>
+        <p class="text-[#54616d] mb-6">Wir arbeiten sowohl direkt mit Kunden, als auch projektbasiert im Auftrag anderer Agenturen.</p>
 
-        <div class="models">
-          <div class="model">
-            <!-- clock icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"></circle>
-              <polyline points="12,7 12,12 16,14"></polyline>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div class="border border-[var(--border)] rounded-2xl bg-white p-5 text-center hover:shadow-xl overflow-hidden transition motion-safe:hover:-translate-y-0.5">
+            <!-- clock -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-9 h-9 mb-2 text-[var(--primary)] mx-auto">
+              <circle cx="12" cy="12" r="9"></circle><polyline points="12,7 12,12 16,14"></polyline>
             </svg>
-            <h3>Stundenbasiert</h3>
+            <h3 class="text-[20px] text-[var(--ink)] mb-1">Stundenbasiert</h3>
             <p>Flexible Unterstützung für Agenturen & Unternehmen ohne lange Bindung.</p>
           </div>
-          <div class="model">
-            <!-- bar chart icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="border border-[var(--border)] rounded-2xl bg-white p-5 text-center hover:shadow-xl overflow-hidden transition motion-safe:hover:-translate-y-0.5">
+            <!-- bar chart -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-9 h-9 mb-2 text-[var(--primary)] mx-auto">
               <line x1="3" y1="22" x2="21" y2="22"></line>
               <rect x="4" y="10" width="4" height="8" rx="1"></rect>
               <rect x="10" y="6" width="4" height="12" rx="1"></rect>
               <rect x="16" y="3" width="4" height="15" rx="1"></rect>
             </svg>
-            <h3>Projektbasiert</h3>
+            <h3 class="text-[20px] text-[var(--ink)] mb-1">Projektbasiert</h3>
             <p>Von Strategie bis Umsetzung, ideal für klare Ziele oder Komplettbetreuungen.</p>
           </div>
-          <div class="model">
-            <!-- users icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="border border-[var(--border)] rounded-2xl bg-white p-5 text-center hover:shadow-xl overflow-hidden transition motion-safe:hover:-translate-y-0.5">
+            <!-- users -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-9 h-9 mb-2 text-[var(--primary)] mx-auto">
               <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="9" cy="7" r="4"></circle>
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
-            <h3>Workshop & Coaching</h3>
-            <p>Know-how im Team aufbauen, Transparenter Wissenstransfer praxisnah und individuell.</p>
+            <h3 class="text-[20px] text-[var(--ink)] mb-1">Workshop & Coaching</h3>
+            <p>Know-how im Team aufbauen durch transparenten Wissenstransfer.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Über uns -->
-    <section id="ueber-uns">
-      <div class="container">
-        <h2>Über uns</h2>
-        <p class="lead">Als externer Partner unterstützt SofRein gemeinsam mit einem eingespielten Team aus spezialisierten Freelancern Unternehmen dabei, gezielt Sichtbarkeit bei der richtigen Zielgruppe aufzubauen und qualifizierte Leads planbar zu generieren.</p>
+    <section id="ueber-uns" class="py-18 md:py-20">
+      <div class="max-w-[1120px] mx-auto px-5">
+        <h2 class="text-[32px] text-[var(--ink)] mb-4">Über uns</h2>
+        <p class="text-[#54616d] mb-6">Als externer Partner unterstützt SofRein gemeinsam mit einem eingespielten Team aus spezialisierten Freelancern Unternehmen dabei, gezielt Sichtbarkeit bei der richtigen Zielgruppe aufzubauen und qualifizierte Leads planbar zu generieren.</p>
         <p><strong>Unser Ansatz:</strong> Entscheidungen basieren auf Daten, nicht auf Bauchgefühl.</p>
       </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="kontakt" class="contact">
-      <div class="container">
-        <h2>Kontakt</h2>
-        <p class="lead" style="color:#d3e2ff">Bereit für den nächsten Schritt? Lassen Sie uns über Ihr Projekt sprechen.</p>
-        <form class="form" onsubmit="event.preventDefault(); alert('Danke! Wir melden uns in Kürze.');">
-          <input type="text" name="name" placeholder="Name" aria-label="Name" required>
-          <input type="email" name="email" placeholder="E-Mail" aria-label="E-Mail" required>
-          <textarea name="message" placeholder="Nachricht" aria-label="Nachricht" required></textarea>
-          <button class="btn" type="submit">Absenden</button>
-        </form>
-      </div>
-    </section>
-  </main>
+<section id="kontakt" class="bg-[#0A2239] text-white border-t border-[#0a1a2d] py-18 md:py-20">
+  <div class="max-w-[1120px] mx-auto px-5">
+    <h2 class="text-white text-[32px] mb-4">Kontakt</h2>
+    <p id="contactLead" class="text-[#d3e2ff] mb-6">
+  Bereit für den nächsten Schritt? Lassen Sie uns über Ihr Projekt sprechen.
+</p>
+
+<!-- verstecktes iFrame-Ziel -->
+<iframe name="gform_hidden_iframe" style="display:none;"></iframe>
+
+<form id="contactForm"
+      class="grid gap-3 max-w-[560px]"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSczjeOviozwT5AfxirKIo6BkOBPMocBhRHnRsOmLVftt2UlQw/formResponse"
+      method="POST"
+      target="gform_hidden_iframe">
+
+  <input class="w-full border border-[#27405e] rounded-xl px-3 py-3 bg-[#0e2a47] text-white"
+         type="text" name="entry.1544374245" placeholder="Name" aria-label="Name" required>
+
+  <input class="w-full border border-[#27405e] rounded-xl px-3 py-3 bg-[#0e2a47] text-white"
+         type="email" name="entry.728933442" placeholder="E-Mail" aria-label="E-Mail" required>
+
+  <textarea class="w-full border border-[#27405e] rounded-xl px-3 py-3 bg-[#0e2a47] text-white min-h-[120px]"
+            name="entry.1157902438" placeholder="Nachricht" aria-label="Nachricht" required></textarea>
+
+  <!-- Pflicht-Parameter -->
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="draftResponse" value="[]">
+  <input type="hidden" name="pageHistory" value="0">
+
+  <div class="flex items-start gap-2 text-sm text-[#d3e2ff]">
+    <input id="privacy" type="checkbox" required class="mt-1">
+    <label for="privacy">
+      Ich habe die <a href="#" target="_blank" class="underline hover:text-white">Datenschutzerklärung</a> gelesen und akzeptiere sie.
+    </label>
+  </div>
+
+  <button class="inline-block bg-[var(--primary)] text-white rounded-xl px-4 py-3 font-bold transition hover:opacity-90 hover:-translate-y-0.5"
+          type="submit">Absenden</button>
+</form>
+
+<script>
+  (function () {
+    const form = document.getElementById('contactForm');
+    const lead = document.getElementById('contactLead');
+    const iframe = document.querySelector('iframe[name="gform_hidden_iframe"]');
+
+    if (!form || !lead || !iframe) return;
+
+    // direkt nach Klick: Formular ausblenden + "Wird gesendet..."
+    form.addEventListener('submit', function () {
+      form.style.display = "none";
+      lead.textContent = "Wird gesendet…";
+    });
+
+    // nach erfolgreichem POST: "Vielen Dank..."
+    iframe.addEventListener('load', function () {
+      form.reset();
+      lead.textContent = "Vielen Dank für Ihre Nachricht!";
+    });
+  })();
+</script>
+
+  </div>
+</section>
+
+<script>
+  // „Danke“-Hinweis, sobald Google die Antwort verarbeitet hat
+  (function () {
+    const iframe = document.querySelector('iframe[name="gform_hidden_iframe"]');
+    if (!iframe) return;
+    iframe.addEventListener('load', function () {
+      const form = document.querySelector('form[action*="docs.google.com/forms"]');
+      if (!form) return;
+      form.reset();
+      const s = document.getElementById('formStatus');
+      if (s) s.textContent = 'Danke! Wir melden uns in Kürze.';
+    });
+  })();
+</script>
+
 
   <!-- Footer -->
-  <footer>
-    <div class="container" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+  <footer class="border-t border-[var(--border)] py-7 text-gray-500">
+    <div class="max-w-[1120px] mx-auto px-5 flex flex-wrap items-center justify-between gap-3">
       <div>© <span id="y"></span> SofRein. Alle Rechte vorbehalten.</div>
-      <div class="muted">
-        <a href="#" class="muted">Impressum</a> ·
-        <a href="#" class="muted">Datenschutz</a> ·
-        <a href="sofrein_bg.html" class="muted" hreflang="bg">BG</a> | <strong>DE</strong>
+      <div class="space-x-2">
+        <a href="#" class="text-gray-500 hover:underline">Impressum</a> ·
+        <a href="#" class="text-gray-500 hover:underline">Datenschutz</a> ·
+        <a href="#" class="text-gray-500 hover:underline" hreflang="bg">BG</a> | <strong>DE</strong>
       </div>
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        const targetId = this.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
