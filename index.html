@@ -391,7 +391,16 @@
   <textarea class="w-full border border-[#27405e] rounded-xl px-3 py-3 bg-[#0e2a47] text-white min-h-[120px]"
             name="entry.1157902438" placeholder="Nachricht" aria-label="Nachricht" required></textarea>
 
-  <input type="hidden" name="fvv" value="1">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+  <label for="security" class="text-[#d3e2ff] text-sm shrink-0">Sicherheitsfrage:</label>
+  <div class="flex items-center gap-2"><img src="https://placehold.co/72x26?text=8+-+3+=+?" alt="Wie viel ist 8 minus 3?" class="h-6 w-auto rounded-sm"/>
+    <input id="security" name="entry.377307224" type="text" inputmode="numeric" pattern="5" maxlength="1" autocomplete="off" required class="w-16 text-center border border-[#27405e] rounded-xl px-2 py-1.5 bg-[#0e2a47] text-white" aria-describedby="securityError"/>
+  </div>
+</div>
+
+<small id="securityError" class="text-red-300 hidden">Bitte geben Sie das richtige Ergebnis ein.</small>
+
+<input type="hidden" name="fvv" value="1">
   <input type="hidden" name="draftResponse" value="[]">
   <input type="hidden" name="pageHistory" value="0">
 
